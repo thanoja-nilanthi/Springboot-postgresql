@@ -7,12 +7,12 @@ public class StudentMapper {
 
     public static StudentDto mapToStudentDto(Student student){
         return new StudentDto(
-              student.getId(),
+                student.getId(),
                 student.getFirstName(),
                 student.getLastName(),
                 student.getAge(),
                 student.getAddress()
-                      );
+        );
     }
     public static Student mapToStudent(StudentDto studentDto){
         return  new Student(

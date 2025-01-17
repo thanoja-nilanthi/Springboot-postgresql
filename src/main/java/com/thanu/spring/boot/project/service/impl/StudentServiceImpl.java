@@ -15,20 +15,16 @@ import java.util.stream.Collectors;
 
 
 @Service
+@AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
-    public StudentServiceImpl(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
-    }
     @Autowired
     private StudentRepository studentRepository;
 
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
-
         Student student= StudentMapper.mapToStudent(studentDto);
-       Student savedStudent= studentRepository.save(student);
-
+        Student savedStudent= studentRepository.save(student);
 
         return StudentMapper.mapToStudentDto(savedStudent);
     }
